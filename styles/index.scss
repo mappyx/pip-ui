@@ -1,0 +1,26 @@
+// UI Theme
+// -------------------
+
+// This is the main file that imports all the Less files from the `/styles` directory.
+
+// For more infos about creating themes, check out:
+// http://flight-manual.atom.io/hacking-atom/sections/creating-a-theme
+
+@import "ui-variables";
+
+@import "base";
+@import "buttons";
+@import "editor";
+@import "find-and-replace";
+@import "git";
+@import "key-binding";
+@import "lists";
+@import "panels";
+@import "progress";
+@import "sites";
+@import "status-bar";
+@import "tabs";
+@import "text";
+@import "tooltips";
+@import "tree-view";
+@import "web-base";
