@@ -104,6 +104,14 @@
             <!-- STAT SCREEN -->
             <div id="status-screen" class="pip-tab-content active">
                 <div class="pip-row">
+                    <div class="pip-col-12">
+                        <div class="pip-alert warning">
+                            <span class="pip-alert-title">SYSTEM STATUS: UNSTABLE</span>
+                            <p>Anomalies detected in the CRT controller. Flicker compensation active.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pip-row">
                     <div class="pip-col-12 pip-col-md-6">
                         <section class="pip-panel">
                             <div class="pip-panel-header">Vital Signs</div>
@@ -116,6 +124,10 @@
                             <div class="pip-progress-container">
                                 <div class="pip-progress-bar animated" style="width: 65%;"></div>
                             </div>
+
+                            <div style="margin-top: 20px;">
+                                <div class="pip-loader">SYNCING DATA</div>
+                            </div>
                         </section>
                     </div>
                     <div class="pip-col-12 pip-col-md-6">
@@ -126,6 +138,11 @@
                             <button class="pip-btn error" style="width: 100%;" onclick="showModal('rad-modal')">VIEW
                                 PROTOCOL</button>
                         </article>
+
+                        <div class="pip-alert error">
+                            <span class="pip-alert-title">CRITICAL ERROR</span>
+                            <p>Fusion core depletion imminent. Sector 7 evacuation advised.</p>
+                        </div>
                     </div>
                 </div>
             </div>

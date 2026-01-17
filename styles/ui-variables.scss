@@ -1,4 +1,3 @@
-
 // UI Variables
 // -------------------
 
@@ -11,70 +10,85 @@
 // A good start is to change the color of the `$base-background-color` variable.
 
 
-// Text Colors
-$text-color: #0c833d;
-$text-color-subtle:   #0c833d;
-$text-color-highlight: #0c833d;
-$text-color-selected:  #1cfa80;
+// Pip-Boy Source Palette (SCSS)
+$pip-green-dim: #0c833d;
+$pip-green-bright: #1cfa80;
+$pip-bg-dark: #052308;
+$pip-bg-very-dark: #001100;
+$pip-bg-button: #213721;
+$pip-bg-input: #1c4221;
 
-$text-color-info:    #1cfa80;
-$text-color-success: #1cfa80;
-$text-color-warning: #1cfa80;
-$text-color-error:   #1cfa80;
+// CSS Custom Properties (Exposed for runtime overrides)
+:root {
+    --pip-green-dim: #{$pip-green-dim};
+    --pip-green-bright: #{$pip-green-bright};
+    --pip-bg-dark: #{$pip-bg-dark};
+    --pip-bg-very-dark: #{$pip-bg-very-dark};
+    --pip-bg-button: #{$pip-bg-button};
+    --pip-bg-input: #{$pip-bg-input};
+
+    --pip-font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+    --pip-border-radius: 2px;
+    --pip-padding: 10px;
+}
+
+// Text Colors
+$text-color: $pip-green-dim;
+$text-color-subtle: $pip-green-dim;
+$text-color-highlight: $pip-green-dim;
+$text-color-selected: $pip-green-bright;
+
+$text-color-info: $pip-green-bright;
+$text-color-success: $pip-green-bright;
+$text-color-warning: $pip-green-bright;
+$text-color-error: $pip-green-bright;
 
 // Background colors
-$background-color-info:    #063315;
-$background-color-success:  #063315;
-$background-color-warning:  #063315;
-$background-color-error:    #063315;
+$background-color-info: #063315;
+$background-color-success: #063315;
+$background-color-warning: #063315;
+$background-color-error: #063315;
 
-$background-color-highlight:  #0c833d;
-$background-color-selected:  #3b5c3b;
-$app-background-color: #052308;
+$background-color-highlight: $pip-green-dim;
+$background-color-selected: #3b5c3b;
+$app-background-color: $pip-bg-dark;
 
 // Base colors
-$base-background-color:  #052308;
-$base-border-color:     #0c833d;
+$base-background-color: $pip-bg-dark;
+$base-border-color: $pip-green-dim;
 
 // Component colors
-$pane-item-background-color: #052308;
-$pane-item-border-color: #0c833d;
+$pane-item-background-color: $pip-bg-dark;
+$pane-item-border-color: $pip-green-dim;
 
-$input-background-color: #1c4221;
-$input-border-color: #0c833d;
+$input-background-color: $pip-bg-input;
+$input-border-color: $pip-green-dim;
 
-$tool-panel-background-color: #001100;
-$tool-panel-border-color:    #0c833d;
+$tool-panel-background-color: $pip-bg-very-dark;
+$tool-panel-border-color: $pip-green-dim;
 
-$inset-panel-background-color:#0c833d;
-$inset-panel-border-color: #0c833d;
+$inset-panel-background-color: $pip-green-dim;
+$inset-panel-border-color: $pip-green-dim;
 
-$panel-heading-background-color: #0c833d;
-$panel-heading-border-color:     $base-border-color;
+$panel-heading-background-color: $pip-green-dim;
+$panel-heading-border-color: $base-border-color;
 
-$overlay-background-color: lighten($base-background-color, 5%);
-$overlay-border-color:     $base-border-color;
+$overlay-background-color: lighten($pip-bg-dark, 5%);
+$overlay-border-color: $base-border-color;
 
-$button-background-color:          #213721;
-$button-background-color-hover:    lighten($button-background-color, 5%);
+$button-background-color: $pip-bg-button;
+$button-background-color-hover: lighten($pip-bg-button, 5%);
 $button-background-color-selected: $button-background-color-hover;
-$button-border-color:              #063315;
+$button-border-color: #063315;
 
-$tab-bar-background-color:    $base-background-color;
-$tab-bar-border-color:        $base-border-color;
-$tab-background-color:        $tab-bar-background-color;
+$tab-bar-background-color: $base-background-color;
+$tab-bar-border-color: $base-border-color;
+$tab-background-color: $tab-bar-background-color;
 $tab-background-color-active: lighten($tab-bar-background-color, 5%);
-$tab-border-color:            $base-border-color;
+$tab-border-color: $base-border-color;
 
 $tree-view-background-color: $base-background-color;
-$tree-view-border-color:     $base-border-color;
-
-// Site colors
-$ui-site-color-1: hsl(208, 100%, 50%); // blue
-$ui-site-color-2: hsl(160,  70%, 42%); // green
-$ui-site-color-3: hsl(32,   60%, 50%); // orange
-$ui-site-color-4: #D831B0;             // pink
-$ui-site-color-5: #EBDD5B;             // yellow
+$tree-view-border-color: $base-border-color;
 
 // Sizes
 $font-size: 12px;

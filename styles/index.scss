@@ -10,17 +10,21 @@
 
 @import "base";
 @import "buttons";
-@import "editor";
-@import "find-and-replace";
-@import "git";
-@import "key-binding";
 @import "lists";
 @import "panels";
 @import "progress";
-@import "sites";
-@import "status-bar";
 @import "tabs";
 @import "text";
-@import "tooltips";
-@import "tree-view";
+@import "alerts";
+@import "loaders";
 @import "web-base";
+
+// Legacy Atom Theme Support (Not included in modern web build)
+// @import "legacy/editor";
+// @import "legacy/find-and-replace";
+// @import "legacy/git";
+// @import "legacy/key-binding";
+// @import "legacy/sites";
+// @import "legacy/status-bar";
+// @import "legacy/tooltips";
+// @import "legacy/tree-view";

@@ -7,33 +7,16 @@ A comprehensive, mobile-first UI library with a retro terminal aesthetic. Built 
 
 ## ✨ Features
 
-- 🎨 **Retro Terminal Aesthetic**: Classic phosphor green terminal styling
+- 🎨 **Retro Terminal Aesthetic**: Classic phosphor green terminal styling with optional CRT flicker
 - 📱 **Mobile-First**: Fully responsive with breakpoints optimized for all devices
 - 🎯 **12-Column Grid System**: Flexible layout system with responsive modifiers
-- 🚀 **Zero Dependencies**: Pure CSS, no JavaScript required (except for interactive demos)
-- ⚡ **Lightweight**: ~22KB compiled CSS
-- 🔧 **Customizable**: SCSS variables for easy theming
+- 🚀 **Zero Dependencies**: Pure CSS, no JavaScript required
+- ⚡ **Lightweight**: ~18KB compiled CSS after legacy cleanup
+- 🔧 **Customizable**: CSS Custom Properties for runtime theming while maintaining SCSS support
 - ♿ **Semantic HTML**: Accessible markup structure
 
 ## 🚀 Quick Start
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/theycallmemac/pipboy-ui.git
-cd pipboy-ui
-
-# Install dependencies
-npm install
-
-# Build CSS
-npm run build:sass
-
-# Watch for changes
-npm run watch:sass
-```
-
+...
 ### Usage
 
 Include the compiled CSS in your HTML:
@@ -42,7 +25,7 @@ Include the compiled CSS in your HTML:
 <link rel="stylesheet" href="dist/pipboy.css">
 ```
 
-Apply the base class to your body:
+Apply the base class to your body for the full experience:
 
 ```html
 <body class="pip-body pip-crt">
@@ -55,53 +38,41 @@ Apply the base class to your body:
 ## 📦 Components
 
 ### Layout
-
-#### Container
-```html
-<div class="pip-container">
-    <!-- Max-width container with responsive padding -->
-</div>
-```
-
-#### Grid System
-```html
-<div class="pip-row">
-    <div class="pip-col-12 pip-col-md-6">Column 1</div>
-    <div class="pip-col-12 pip-col-md-6">Column 2</div>
-</div>
-```
-
-**Grid Classes:**
-- `.pip-col-{1-12}`: Mobile-first columns
-- `.pip-col-md-{1-12}`: Desktop columns (>768px)
+...
 
 ### Panels & Cards
+...
 
-#### Panel
+### Alerts [NEW]
+
+Thematic notification boxes for warnings and errors.
+
 ```html
-<section class="pip-panel">
-    <div class="pip-panel-header">System Status</div>
-    <p class="pip-text">Panel content goes here.</p>
-</section>
+<div class="pip-alert warning">
+    <span class="pip-alert-title">Radiation Warning</span>
+    <p>Ambient RAD levels rising.</p>
+</div>
+
+<div class="pip-alert error">
+    <span class="pip-alert-title">Critical Failure</span>
+    <p>System reboot required.</p>
+</div>
 ```
 
-#### Card
+### Loaders [NEW]
+
+Terminal-style loading animations.
+
 ```html
-<article class="pip-card">
-    <span class="pip-card-title">Alert</span>
-    <p class="pip-text">Card content with hover effects.</p>
-</article>
+<!-- Inline loader with text -->
+<div class="pip-loader">Connecting to Vault-Tec</div>
+
+<!-- Block loader -->
+<div class="pip-loader block">Processing</div>
 ```
 
 ### Buttons
-
-```html
-<button class="pip-btn">Default</button>
-<button class="pip-btn primary">Primary</button>
-<button class="pip-btn success">Success</button>
-<button class="pip-btn warning">Warning</button>
-<button class="pip-btn error">Error</button>
-```
+...
 
 ### Forms
 
