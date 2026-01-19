@@ -76,3 +76,36 @@
         animation-delay: #{$i * 0.2}s;
     }
 }
+
+// Screen Jitter (CRT Hardware Feedback)
+.pip-anim-jitter {
+    animation: pip-jitter 0.15s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes pip-jitter {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    15% {
+        transform: translate(-1px, 1px) rotate(-0.1deg);
+    }
+
+    30% {
+        transform: translate(-2px, -1px) rotate(0.1deg);
+    }
+
+    45% {
+        transform: translate(2px, 1px);
+    }
+
+    60% {
+        transform: translate(1px, -1px) rotate(-0.1deg);
+    }
+
+    75% {
+        transform: translate(-1px, 2px);
+    }
+}

@@ -547,6 +547,31 @@
             });
         });
 
+        // Screen Jitter Trigger
+        document.addEventListener('click', (e) => {
+            const interactive = e.target.closest('button, .pip-tab, a, .pip-card, .pip-panel');
+            if (interactive) {
+                // Determine what to shake: 
+                // 1. If it's a tab, shake the active content
+                // 2. Otherwise shake the element itself
+                let target = interactive;
+
+                if (interactive.classList.contains('pip-tab')) {
+                    const tabID = interactive.getAttribute('data-target');
+                    target = document.getElementById(tabID);
+                }
+
+                if (target) {
+                    target.classList.remove('pip-anim-jitter');
+                    void target.offsetWidth; // Trigger reflow
+                    target.classList.add('pip-anim-jitter');
+                    setTimeout(() => {
+                        target.classList.remove('pip-anim-jitter');
+                    }, 200);
+                }
+            }
+        });
+
         // Close modal on overlay click
         document.querySelectorAll('.pip-modal-overlay').forEach(overlay => {
             overlay.addEventListener('click', (e) => {

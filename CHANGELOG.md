@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `pip-typewriter`: Terminal-style text reveal utilities.
   - `pip-ghosting`: Simulate phosphor persistence on old displays.
   - `pip-anim-fade-in`: Sequential animation entry with delay modifiers (`pip-delay-1` to `pip-delay-10`).
+  - `pip-anim-jitter`: Micro-interaction "screen jump" simulating CRT hardware feedback (localized to elements or global).
 - **Enhanced Grid (Grid v2)**:
   - `pip-grid-areas`: Named CSS Grid area support for complex dashboard layouts.
 - **Spacing Utilities**: Standardized margin and padding classes (`pip-m-*`, `pip-p-*`).

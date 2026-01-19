@@ -10,7 +10,7 @@ A comprehensive, mobile-first UI library with a retro terminal aesthetic. Built 
 - 🎨 **Retro Terminal Aesthetic**: Classic phosphor green terminal styling with customizable CRT effects
 - 📱 **Mobile-First**: Fully responsive with breakpoints optimized for all devices
 - 🎯 **Advanced Layout**: 12-column grid and **CSS Grid Areas** support
-- ✨ **Atmospheric Animations**: Built-in typewriter, ghosting, and flicker effects
+- ✨ **Atmospheric Animations**: Built-in typewriter, ghosting, flicker, and **screen jitter** effects
 - 🚀 **Zero Dependencies**: Pure CSS, no JavaScript required
 - 🔧 **Customizable**: CSS Custom Properties for runtime theming
 - ♿ **Semantic HTML**: Accessible markup structure
@@ -337,6 +337,17 @@ Retro effects for realistic terminal feedback.
 ```html
 <div class="pip-anim-fade-in pip-delay-2">Deferred content</div>
 <div class="pip-anim-fade-in pip-delay-4">Next sequence</div>
+```
+
+**Screen Jitter (Hardware Feedback):**
+Simulates a mechanical "kick" or interface instability. Can be applied to the whole screen or specific components.
+```html
+<!-- Whole screen jitter -->
+<body class="pip-anim-jitter">...</body>
+
+<!-- Localized element jitter -->
+<button class="pip-anim-jitter">Subtle Feedback</button>
+<div class="pip-panel pip-anim-jitter">Container Feedback</div>
 ```
 
 ## 🎨 Customization
