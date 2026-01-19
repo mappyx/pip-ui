@@ -5,6 +5,31 @@ All notable changes to the Pip UI Library will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-01-19
+
+### Added
+- **Full Library Debranding**: Removed all copyrighted references to "Vault-Tec", "Fallout", and "RobCo". The library is now **Pip UI**.
+- **Atmospheric Animations**:
+  - `pip-typewriter`: Terminal-style text reveal utilities.
+  - `pip-ghosting`: Simulate phosphor persistence on old displays.
+  - `pip-anim-fade-in`: Sequential animation entry with delay modifiers (`pip-delay-1` to `pip-delay-10`).
+- **Enhanced Grid (Grid v2)**:
+  - `pip-grid-areas`: Named CSS Grid area support for complex dashboard layouts.
+- **Spacing Utilities**: Standardized margin and padding classes (`pip-m-*`, `pip-p-*`).
+- **Pip Sidebar**: New collapsible vertical navigation component (`pip-sidebar`).
+- **Interactive Indicators**: Buttons now feature a `>` indicator on hover/active states.
+
+### Changed
+- Refined CRT scanline effect for better readability and subtler flicker.
+- Improved button typography and interactive feedback.
+- Updated demo to use a stable top-tab navigation layout.
+- Standardized documentation with generic terminal terminology.
+
+### Fixed
+- Navigation conflicts and mobile menu overlaps in the demo page.
+- Sidebar z-index and transition issues.
+- CSS syntax errors and Sass deprecation warnings (partial).
+
 ## [3.1.0] - 2026-01-16
 
 ### Added

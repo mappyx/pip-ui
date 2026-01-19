@@ -2,17 +2,17 @@
 
 A comprehensive, mobile-first UI library with a retro terminal aesthetic. Built with pure SCSS, no dependencies required.
 
-![Version](https://img.shields.io/badge/version-3.0.1-green.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## ✨ Features
 
-- 🎨 **Retro Terminal Aesthetic**: Classic phosphor green terminal styling with optional CRT flicker
+- 🎨 **Retro Terminal Aesthetic**: Classic phosphor green terminal styling with customizable CRT effects
 - 📱 **Mobile-First**: Fully responsive with breakpoints optimized for all devices
-- 🎯 **12-Column Grid System**: Flexible layout system with responsive modifiers
+- 🎯 **Advanced Layout**: 12-column grid and **CSS Grid Areas** support
+- ✨ **Atmospheric Animations**: Built-in typewriter, ghosting, and flicker effects
 - 🚀 **Zero Dependencies**: Pure CSS, no JavaScript required
-- ⚡ **Lightweight**: ~18KB compiled CSS after legacy cleanup
-- 🔧 **Customizable**: CSS Custom Properties for runtime theming while maintaining SCSS support
+- 🔧 **Customizable**: CSS Custom Properties for runtime theming
 - ♿ **Semantic HTML**: Accessible markup structure
 
 ## 🚀 Quick Start
@@ -37,8 +37,27 @@ Apply the base class to your body for the full experience:
 
 ## 📦 Components
 
-### Layout
-...
+### Grid & Layout
+
+**Flexible Grid:**
+Standard 12-column row/col system.
+
+**Named Grid Areas:**
+Use `pip-grid-areas` for complex terminal layouts:
+```html
+<div class="pip-grid-areas" style="grid-template-areas: 'header header' 'nav main' 'footer footer';">
+    <header style="grid-area: header">...</header>
+    <nav style="grid-area: nav">...</nav>
+    <main style="grid-area: main">...</main>
+    <footer style="grid-area: footer">...</footer>
+</div>
+```
+
+**Spacing Utilities:**
+Standardized padding and margin classes:
+- `pip-m-[0-5]`: Margin
+- `pip-p-[0-5]`: Padding
+- `pip-mt-[0-5]`, `pip-pb-[0-5]`, etc.
 
 ### Panels & Cards
 ...
@@ -49,8 +68,8 @@ Thematic notification boxes for warnings and errors.
 
 ```html
 <div class="pip-alert warning">
-    <span class="pip-alert-title">Radiation Warning</span>
-    <p>Ambient RAD levels rising.</p>
+    <span class="pip-alert-title">Hazard Warning</span>
+    <p>Environmental interference detected.</p>
 </div>
 
 <div class="pip-alert error">
@@ -65,7 +84,7 @@ Terminal-style loading animations.
 
 ```html
 <!-- Inline loader with text -->
-<div class="pip-loader">Connecting to Vault-Tec</div>
+<div class="pip-loader">Connecting to Terminal...</div>
 
 <!-- Block loader -->
 <div class="pip-loader block">Processing</div>
@@ -73,6 +92,22 @@ Terminal-style loading animations.
 
 ### Buttons
 ...
+
+### Sidebar
+
+A vertical navigation component for terminal interfaces.
+
+```html
+<aside class="pip-sidebar">
+    <div class="pip-sidebar-header">
+        <div class="pip-logo">LOGO</div>
+    </div>
+    <nav class="pip-sidebar-nav">
+        <a href="#" class="pip-sidebar-link active">LINK 1</a>
+        <a href="#" class="pip-sidebar-link">LINK 2</a>
+    </nav>
+</aside>
+```
 
 ### Forms
 
@@ -284,6 +319,26 @@ function closeModal() {
 </body>
 ```
 
+#### Atmospheric Animations [NEW]
+
+Retro effects for realistic terminal feedback.
+
+**Typewriter:**
+```html
+<p class="pip-typewriter">Initializing system components...</p>
+```
+
+**Ghosting (Phosphor Persistence):**
+```html
+<div class="pip-ghosting" data-text="CRITICAL ERROR">CRITICAL ERROR</div>
+```
+
+**Fade-in & Delay:**
+```html
+<div class="pip-anim-fade-in pip-delay-2">Deferred content</div>
+<div class="pip-anim-fade-in pip-delay-4">Next sequence</div>
+```
+
 ## 🎨 Customization
 
 Edit `styles/ui-variables.scss` to customize colors and spacing:
@@ -339,4 +394,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-**Built with ❤️ for the Wasteland**
+**Built with ❤️ for Pip UI Terminal Systems**

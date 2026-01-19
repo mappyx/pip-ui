@@ -1,13 +1,14 @@
 {
-  "name": "pipboy-ui",
+  "name": "pip-ui-lib",
   "theme": "ui",
-  "version": "1.0.0",
-  "description": "A ui theme to emulate the pipboy in the Fallout game series.",
+  "version": "1.1.0",
+  "description": "A retro terminal UI library with a classic phosphor aesthetic.",
   "keywords": [
     "ui",
     "theme",
-    "pipboy",
-    "fallout"
+    "terminal",
+    "retro",
+    "pip-ui"
   ],
   "repository": "https://github.com/theycallmemac/pipboy-ui",
   "license": "MIT",

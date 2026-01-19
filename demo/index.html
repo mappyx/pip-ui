@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pip UI Library - v3.1 Advanced</title>
+    <title>Pip UI Library - Terminal OS v1.1</title>
     <link rel="stylesheet" href="../dist/pipboy.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="pip-table.js" defer></script>
@@ -17,7 +17,8 @@
         }
 
         #mobile-menu-trigger {
-            display: none;
+            display: block;
+            /* Always visible for toggle */
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -85,18 +86,28 @@
 
 <body class="pip-body pip-crt">
 
-    <button id="mobile-menu-trigger" class="pip-btn primary">MENU</button>
+    <!-- BOOT SEQUENCE OVERLAY -->
+    <div id="boot-overlay" class="pip-loader-overlay">
+        <div class="pip-typewriter pip-anim-fade-in" style="font-size: 2em; margin-bottom: 20px;">PIP-OS TERMINAL v3.1.0
+        </div>
+        <div class="pip-loader-text pip-anim-fade-in pip-delay-2">INITIALIZING SYSTEM...</div>
+        <div class="pip-loader-text pip-anim-fade-in pip-delay-4">CONNECTING TO PIP UI HARDWARE...</div>
+        <div class="pip-loader-text pip-anim-fade-in pip-delay-6">ENVIRONMENTAL SENSORS CALIBRATED.</div>
+        <button class="pip-btn primary pip-anim-fade-in pip-delay-8"
+            onclick="this.parentElement.style.display='none'">ENTER SYSTEM</button>
+    </div>
+
 
     <div class="pip-container">
         <header style="margin-bottom: 30px;">
-            <h1 class="pip-text highlight" style="font-size: 1.8rem; margin-bottom: 5px;">VAULT-TEC OS v3.0.1</h1>
-            <p class="pip-text subtle">PIP-BOY MODEL 3000 Mark IV | [CONNECTED]</p>
+            <h1 class="pip-text highlight" style="font-size: 1.8rem; margin-bottom: 5px;">PIP-UI CONSOLE v3.1.0</h1>
+            <p class="pip-text subtle">PIP-CORE SERIES 1.0 Alpha | [CONNECTED]</p>
 
-            <nav class="header-nav" id="main-nav">
-                <div class="nav-item active" data-target="status-screen">STAT</div>
-                <div class="nav-item" data-target="inv-screen">INV</div>
-                <div class="nav-item" data-target="data-screen">DATA</div>
-                <div class="nav-item" data-target="settings-screen">SET</div>
+            <nav class="pip-tabs" style="margin-top: 20px;">
+                <button class="pip-tab active" data-target="status-screen">STATUS</button>
+                <button class="pip-tab" data-target="inv-screen">INVENTORY</button>
+                <button class="pip-tab" data-target="data-screen">DATABASE</button>
+                <button class="pip-tab" data-target="settings-screen">SETTINGS</button>
             </nav>
         </header>
 
@@ -106,8 +117,10 @@
                 <div class="pip-row">
                     <div class="pip-col-12">
                         <div class="pip-alert warning">
-                            <span class="pip-alert-title">SYSTEM STATUS: UNSTABLE</span>
-                            <p>Anomalies detected in the CRT controller. Flicker compensation active.</p>
+                            <span class="pip-alert-title pip-ghosting" data-text="SYSTEM STATUS: UNSTABLE">SYSTEM
+                                STATUS: UNSTABLE</span>
+                            <p class="pip-typewriter">Anomalies detected in the CRT controller. Flicker compensation
+                                active.</p>
                         </div>
                     </div>
                 </div>
@@ -132,16 +145,17 @@
                     </div>
                     <div class="pip-col-12 pip-col-md-6">
                         <article class="pip-card">
-                            <span class="pip-card-title">Radiation Warning</span>
-                            <p class="pip-text warning">Ambient RAD levels rising in current sector. Geiger counter
+                            <span class="pip-card-title">Hardware Hazard</span>
+                            <p class="pip-text warning">Ambient interference rising in current sector. Environmental
+                                scan
                                 active.</p>
-                            <button class="pip-btn error" style="width: 100%;" onclick="showModal('rad-modal')">VIEW
+                            <button class="pip-btn error" style="width: 100%;" onclick="showModal('hazard-modal')">VIEW
                                 PROTOCOL</button>
                         </article>
 
                         <div class="pip-alert error">
-                            <span class="pip-alert-title">CRITICAL ERROR</span>
-                            <p>Fusion core depletion imminent. Sector 7 evacuation advised.</p>
+                            <span class="pip-alert-title">SYSTEM ERROR</span>
+                            <p>Power core depletion imminent. Sector 7 shutdown advised.</p>
                         </div>
                     </div>
                 </div>
@@ -173,7 +187,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Plasma Rifle</td>
+                                    <td>Plasma Blaster</td>
                                     <td>WEAP</td>
                                     <td>15.0</td>
                                     <td>1200</td>
@@ -181,7 +195,7 @@
                                     <td><span class="pip-badge info">Equipped</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Laser Pistol</td>
+                                    <td>Laser Beam</td>
                                     <td>WEAP</td>
                                     <td>3.5</td>
                                     <td>450</td>
@@ -189,7 +203,7 @@
                                     <td><span class="pip-badge">Stored</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Combat Shotgun</td>
+                                    <td>Kinetic Rail</td>
                                     <td>WEAP</td>
                                     <td>12.0</td>
                                     <td>800</td>
@@ -197,7 +211,7 @@
                                     <td><span class="pip-badge">Stored</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Stimpak (10)</td>
+                                    <td>Med-Kit (10)</td>
                                     <td>AID</td>
                                     <td>0.0</td>
                                     <td>400</td>
@@ -205,7 +219,7 @@
                                     <td><span class="pip-badge success">Ready</span></td>
                                 </tr>
                                 <tr>
-                                    <td>RadAway (5)</td>
+                                    <td>De-Tox (5)</td>
                                     <td>AID</td>
                                     <td>0.0</td>
                                     <td>250</td>
@@ -213,7 +227,7 @@
                                     <td><span class="pip-badge success">Ready</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Rad-X (8)</td>
+                                    <td>Shield-X (8)</td>
                                     <td>AID</td>
                                     <td>0.0</td>
                                     <td>160</td>
@@ -221,7 +235,7 @@
                                     <td><span class="pip-badge success">Ready</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Vault Suit</td>
+                                    <td>Tech Suit</td>
                                     <td>APPA</td>
                                     <td>1.0</td>
                                     <td>50</td>
@@ -229,7 +243,7 @@
                                     <td><span class="pip-badge info">Equipped</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Combat Armor</td>
+                                    <td>Guardian Plate</td>
                                     <td>APPA</td>
                                     <td>15.0</td>
                                     <td>950</td>
@@ -237,7 +251,7 @@
                                     <td><span class="pip-badge">Stored</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Power Armor Helmet</td>
+                                    <td>Armor Helmet</td>
                                     <td>APPA</td>
                                     <td>10.0</td>
                                     <td>1500</td>
@@ -245,7 +259,7 @@
                                     <td><span class="pip-badge warning">Damaged</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Nuka-Cola (3)</td>
+                                    <td>Generic Cola (3)</td>
                                     <td>FOOD</td>
                                     <td>0.3</td>
                                     <td>60</td>
@@ -261,7 +275,7 @@
                                     <td><span class="pip-badge success">Fresh</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Cram (2)</td>
+                                    <td>Potted Meat (2)</td>
                                     <td>FOOD</td>
                                     <td>0.2</td>
                                     <td>20</td>
@@ -269,7 +283,7 @@
                                     <td><span class="pip-badge success">Fresh</span></td>
                                 </tr>
                                 <tr>
-                                    <td>10mm Ammo (250)</td>
+                                    <td>Standard Ammo (250)</td>
                                     <td>AMMO</td>
                                     <td>0.8</td>
                                     <td>125</td>
@@ -277,7 +291,7 @@
                                     <td><span class="pip-badge">Available</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Fusion Cell (180)</td>
+                                    <td>Power Cell (180)</td>
                                     <td>AMMO</td>
                                     <td>0.0</td>
                                     <td>360</td>
@@ -285,7 +299,7 @@
                                     <td><span class="pip-badge">Available</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Shotgun Shell (45)</td>
+                                    <td>Slug Shell (45)</td>
                                     <td>AMMO</td>
                                     <td>0.5</td>
                                     <td>90</td>
@@ -293,7 +307,7 @@
                                     <td><span class="pip-badge">Available</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Frag Grenade (3)</td>
+                                    <td>Standard Grenade (3)</td>
                                     <td>EXPL</td>
                                     <td>0.5</td>
                                     <td>300</td>
@@ -301,7 +315,7 @@
                                     <td><span class="pip-badge warning">Volatile</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Bottlecap Mine (2)</td>
+                                    <td>Manual Mine (2)</td>
                                     <td>EXPL</td>
                                     <td>0.5</td>
                                     <td>200</td>
@@ -309,7 +323,7 @@
                                     <td><span class="pip-badge warning">Volatile</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Lockpick (15)</td>
+                                    <td>Lock Tool (15)</td>
                                     <td>MISC</td>
                                     <td>0.0</td>
                                     <td>45</td>
@@ -317,7 +331,7 @@
                                     <td><span class="pip-badge">Available</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Bobby Pin (50)</td>
+                                    <td>Security Pin (50)</td>
                                     <td>MISC</td>
                                     <td>0.0</td>
                                     <td>5</td>
@@ -325,7 +339,7 @@
                                     <td><span class="pip-badge">Available</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Scrap Metal (12)</td>
+                                    <td>Alloy Plate (12)</td>
                                     <td>MISC</td>
                                     <td>3.0</td>
                                     <td>36</td>
@@ -360,7 +374,7 @@
                             <p class="pip-text">
                                 Processor:
                                 <span class="pip-tooltip">
-                                    RobCo Unified OS
+                                    Pip-Unified CPU
                                     <span class="pip-tooltip-text">Radiation-hardened processor running at 1.2
                                         GHz</span>
                                 </span>
@@ -370,15 +384,15 @@
                                 Memory:
                                 <span class="pip-tooltip">
                                     64MB RAM
-                                    <span class="pip-tooltip-text">Sufficient for all Vault-Tec applications</span>
+                                    <span class="pip-tooltip-text">Sufficient for all Terminal OS applications</span>
                                 </span>
                                 <span class="pip-badge info">OPTIMAL</span>
                             </p>
                             <p class="pip-text">
                                 Storage:
                                 <span class="pip-tooltip">
-                                    10GB HDD
-                                    <span class="pip-tooltip-text">Holotape-compatible storage system</span>
+                                    10GB Solid State
+                                    <span class="pip-tooltip-text">Proprietary high-speed storage system</span>
                                 </span>
                                 <span class="pip-badge warning">78% FULL</span>
                             </p>
@@ -394,10 +408,10 @@
                             <button class="pip-accordion-header">Hardware Specifications</button>
                             <div class="pip-accordion-content">
                                 <div class="pip-accordion-body">
-                                    <p class="pip-text">Model: Pip-Boy 3000 Mark IV</p>
-                                    <p class="pip-text">Manufacturer: RobCo Industries</p>
-                                    <p class="pip-text">Year: 2077</p>
-                                    <p class="pip-text">Power Source: Fusion Cell (10 year lifespan)</p>
+                                    <p class="pip-text">Model: Pip-Terminal v1.0</p>
+                                    <p class="pip-text">Manufacturer: Pip Industries</p>
+                                    <p class="pip-text">Year: 2026</p>
+                                    <p class="pip-text">Power Source: Power Cell (10 year lifespan)</p>
                                 </div>
                             </div>
                         </div>
@@ -406,10 +420,10 @@
                             <button class="pip-accordion-header">Software Version</button>
                             <div class="pip-accordion-content">
                                 <div class="pip-accordion-body">
-                                    <p class="pip-text">OS: Vault-Tec Unified OS v3.0.1</p>
-                                    <p class="pip-text">Build: 2077.10.23</p>
-                                    <p class="pip-text">Kernel: RobCo 5.12.0-LTS</p>
-                                    <p class="pip-text">Last Update: 23 OCT 2077</p>
+                                    <p class="pip-text">OS: Terminal Unified OS v3.1.0</p>
+                                    <p class="pip-text">Build: 2026.01.19</p>
+                                    <p class="pip-text">Kernel: Pip-OS 5.12.0-LTS</p>
+                                    <p class="pip-text">Last Update: 19 JAN 2026</p>
                                 </div>
                             </div>
                         </div>
@@ -419,8 +433,8 @@
                             <div class="pip-accordion-content">
                                 <div class="pip-accordion-body">
                                     <p class="pip-text">Status: <span class="pip-badge error">DISCONNECTED</span></p>
-                                    <p class="pip-text">Last Known Network: Vault 111 Intranet</p>
-                                    <p class="pip-text">IP Address: 192.168.111.42</p>
+                                    <p class="pip-text">Last Known Network: Internal Intranet</p>
+                                    <p class="pip-text">IP Address: 127.0.0.1</p>
                                     <p class="pip-text warning">Warning: Unable to connect to external networks</p>
                                 </div>
                             </div>
@@ -437,7 +451,7 @@
                             <div class="pip-panel-header">Hardware Preferences</div>
                             <h4 class="pip-text highlight">Alert Systems</h4>
                             <label class="pip-checkbox-container">
-                                RAD Threshold Alarm
+                                Hazard Threshold Alarm
                                 <input type="checkbox" checked>
                                 <span class="checkmark"></span>
                             </label>
@@ -480,20 +494,21 @@
 
         <footer
             style="margin-top: 50px; border-top: 1px solid rgba(12, 131, 61, 0.3); padding-top: 20px; text-align: center;">
-            <p class="pip-text subtle">© 2077 VAULT-TEC INDUSTRIES | ALL RIGHTS RESERVED</p>
+            <p class="pip-text subtle">© 2026 PIP UI INDUSTRIES | ALL RIGHTS RESERVED</p>
         </footer>
     </div>
 
     <!-- MODALS -->
-    <div id="rad-modal" class="pip-modal-overlay">
+    <div id="hazard-modal" class="pip-modal-overlay">
         <div class="pip-modal">
             <div class="pip-modal-header">
-                <h2>RAD EMERGENCY</h2>
+                <h2>HAZARD EMERGENCY</h2>
             </div>
-            <p class="pip-text">Radiation detected. Please find the nearest decontamination arch or consume RadAway
+            <p class="pip-text">Hazardous environment detected. Please find the nearest protection arch or consume
+                De-Tox
                 immediately.</p>
             <div class="pip-modal-footer">
-                <button class="pip-btn primary" onclick="hideModal('rad-modal')">ACKNOWLEDGE</button>
+                <button class="pip-btn primary" onclick="hideModal('hazard-modal')">ACKNOWLEDGE</button>
             </div>
         </div>
     </div>
@@ -503,29 +518,19 @@
         function hideModal(id) { document.getElementById(id).classList.remove('active'); }
 
         // Tab Logic
-        const navItems = document.querySelectorAll('.nav-item');
+        const tabButtons = document.querySelectorAll('.pip-tab');
         const tabContents = document.querySelectorAll('.pip-tab-content');
 
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const target = item.getAttribute('data-target');
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-target');
 
-                navItems.forEach(i => i.classList.remove('active'));
+                tabButtons.forEach(b => b.classList.remove('active'));
                 tabContents.forEach(c => c.classList.remove('active'));
 
-                item.classList.add('active');
+                btn.classList.add('active');
                 document.getElementById(target).classList.add('active');
-
-                // Close mobile menu if open
-                document.getElementById('main-nav').classList.remove('open');
             });
-        });
-
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-trigger');
-        const nav = document.getElementById('main-nav');
-        menuBtn.addEventListener('click', () => {
-            nav.classList.toggle('open');
         });
 
         // Accordion Logic

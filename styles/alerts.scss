@@ -1,9 +1,7 @@
-@import "ui-variables";
-
 .pip-alert {
     padding: $component-padding;
     border: 1px solid $base-border-color;
-    background-color: rgba($app-background-color, 0.9);
+    background-color: rgba(#052308, 0.95);
     margin-bottom: $component-padding;
     position: relative;
     overflow: hidden;

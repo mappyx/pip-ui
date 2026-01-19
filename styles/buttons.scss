@@ -7,16 +7,33 @@
 .btn {
   color: lighten($text-color, 6%);
   background-color: $button-background-color;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-left: 25px; // Make room for indicator
+
+  &::before {
+    content: ">";
+    position: absolute;
+    left: 10px;
+    opacity: 0;
+    transition: all 0.2s;
+  }
 
   &:hover,
   &:focus {
     color: $text-color-highlight;
     background-color: $button-background-color-hover;
+
+    &::before {
+      opacity: 1;
+      left: 8px;
+    }
   }
 
   &:active {
     color: rgba($text-color-selected, 0.66);
     background-color: darken($button-background-color, 2%);
+    transform: translateY(1px);
   }
 
   &.selected {

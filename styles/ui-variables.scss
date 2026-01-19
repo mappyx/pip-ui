@@ -10,7 +10,7 @@
 // A good start is to change the color of the `$base-background-color` variable.
 
 
-// Pip-Boy Source Palette (SCSS)
+//* Pip UI Source Palette (SCSS) */
 $pip-green-dim: #0c833d;
 $pip-green-bright: #1cfa80;
 $pip-bg-dark: #052308;
@@ -19,6 +19,7 @@ $pip-bg-button: #213721;
 $pip-bg-input: #1c4221;
 
 // CSS Custom Properties (Exposed for runtime overrides)
+//      <span class="pip-tooltip-text">Sufficient for all Terminal OS applications</span>
 :root {
     --pip-green-dim: #{$pip-green-dim};
     --pip-green-bright: #{$pip-green-bright};
